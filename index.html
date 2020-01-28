@@ -20,6 +20,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+
   </head>
 
   <body>
@@ -29,10 +30,210 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- 8 Rows .row, 3 Cols -->
+
+      <div class= "row">
+
+        <div class = "hour col">9AM</div>
+        <!-- end of hour column -->
+
+        <div class=" time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col"><button class="btn btn-primary saveBtn fa fa-floppy-o" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row1 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">10AM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row2 -- -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">11AM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row3 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">12PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row4 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">1PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row5 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">2PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row6 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">3PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row7 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">4PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row8 -->
+
+      
+      <div class= "row">
+
+        <div class = "hour col-sm-2">5PM</div>
+        <!-- end of hour column -->
+
+        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
+
+          <!-- end of time clock col -->
+        </div>
+
+        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
+        
+      <!-- end of save button col -->
+      </div> 
+      <!-- End of Row9 -->
+
+
+
+<!-- Col 1 = .hour class --> 
+
+      <!-- Col 2 = .time-block class -->
+
+      <!-- Col 3 = .saveBtn (fafa lock?) -->
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="moment.js"></script>
+<script>
+  var now = moment().format()
+  var yesterday = moment().subtract(2, "days");
+  console.log(yesterday.isBefore(now));
+  var formattedDay = moment().format("dddd, MMMM D")
+  $('#currentDay').html(formattedDay);
+  console.log(formattedDay)
+
+  var currentHour = moment().format("hA")
+  console.log(currentHour);
+
+  var displayedHour = $('.hour')
+
+  console.log(displayedHour[0].innerText)
+  console.log(displayedHour[1].innerText)
+  console.log(displayedHour[2].innerText)
+  console.log(displayedHour[3].innerText)
+  console.log(displayedHour[4].innerText)
+  console.log(displayedHour[5].innerText)
+  console.log(displayedHour[6].innerText)
+  console.log(displayedHour[7].innerText)
+  console.log(displayedHour[8].innerText)
+
+  for (var i=0; i<displayedHour.length; i++){
+
+
+var currentlyDisplayedHour = displayedHour.innerText
+    if (currentHour === currentlyDisplayedHour) {
+
+      displayedHour.css("background-color", "#ff6961")
+    }
+
+
+  }
+   
+</script>
+
   </body>
 </html>
