@@ -1,239 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- 8 Rows .row, 3 Cols -->
+</head>
 
-      <div class= "row">
-
-        <div class = "hour col">9AM</div>
-        <!-- end of hour column -->
-
-        <div class=" time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col"><button class="btn btn-primary saveBtn fa fa-floppy-o" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row1 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">10AM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row2 -- -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">11AM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row3 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">12PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row4 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">1PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row5 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">2PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row6 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">3PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row7 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">4PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row8 -->
-
-      
-      <div class= "row">
-
-        <div class = "hour col-sm-2">5PM</div>
-        <!-- end of hour column -->
-
-        <div class="time-block col-lg-8"> <textarea class="time-block"></textarea>
-
-          <!-- end of time clock col -->
-        </div>
-
-        <div class="col-lg-2"><button class="saveBtn" aria-hidden="true"></button></div>
-        
-      <!-- end of save button col -->
-      </div> 
-      <!-- End of Row9 -->
-
-
-
-<!-- Col 1 = .hour class --> 
-
-      <!-- Col 2 = .time-block class -->
-
-      <!-- Col 3 = .saveBtn (fafa lock?) -->
-    </div>
-
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- 8 Rows .row, 3 Cols -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="moment.js"></script>
-<script>
-  var now = moment().format()
-  var yesterday = moment().subtract(2, "days");
-  console.log(yesterday.isBefore(now));
-  var formattedDay = moment().format("dddd, MMMM D")
-  $('#currentDay').html(formattedDay);
-  console.log(formattedDay)
+    <script>
+      // Time and Date Vars using Moment
 
-  var currentHour = moment().format("hA")
-  console.log(currentHour);
+      var now = moment().format()
+      var formattedDay = moment().format("dddd, MMMM D")// Variable to display date at top
+      $('#currentDay').html(formattedDay); // Assigns to top
 
-  var displayedHour = $('.hour')
+      // Setting Up time array
+      var currentTime = moment();
+      var currentTime = currentTime.startOf("hour")
 
-  console.log(displayedHour[0].innerText)
-  console.log(displayedHour[1].innerText)
-  console.log(displayedHour[2].innerText)
-  console.log(displayedHour[3].innerText)
-  console.log(displayedHour[4].innerText)
-  console.log(displayedHour[5].innerText)
-  console.log(displayedHour[6].innerText)
-  console.log(displayedHour[7].innerText)
-  console.log(displayedHour[8].innerText)
+      var hoursArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-  for (var i=0; i<displayedHour.length; i++){
+      hoursArray.forEach(function (time) {
+
+        var newTime = []
+        newTime.push(moment().hour(time).minutes("00").format('hh:mm A'));
+        // console.log(newTime)
+        // console.log(currentTime)
 
 
-var currentlyDisplayedHour = displayedHour.innerText
-    if (currentHour === currentlyDisplayedHour) {
+        var newDiv = $("<div>");
+        newDiv.addClass("row")
 
-      displayedHour.css("background-color", "#ff6961")
-    }
+        var addSpan = $('<span>')
+        addSpan.addClass("hour col-col-md-2")
+
+        var inputText = $("<input>").attr('type', "text");
+        inputText.addClass("time-block form-control col-md-8");
+        inputText.data("displayHour");
+
+        var inputSubmit = $('<button>').attr('type', "submit")
+        inputSubmit.addClass("saveBtn col-col-md-2")
+
+        var icon = $('<i>');
+        icon.addClass("far fa-save")
 
 
-  }
-   
-</script>
+        // Dynamically Generate Elements
+        $(".container").append(newDiv)
+        newDiv.append(addSpan);
+        newDiv.append(inputText)
+        newDiv.append(inputSubmit)
+        inputSubmit.append(icon);
 
-  </body>
+
+        addSpan.text(newTime);
+
+        if (currentTime.isAfter(newTime)) {
+          $(".form").addClass("past");
+
+        }
+        else if (currentTime.isBefore(newTime)) {
+          $(".form").addClass("future");
+        }
+        else if (currentTime.isSame(newTime)) {
+          $(".form").addClass("present");
+
+        }
+
+        console.log(currentTime);
+
+        console.log(newTime)
+
+        console.log(currentTime.isAfter(newTime))
+
+        console.log(currentTime.isBefore(newTime))
+
+        console.log(currentTime.isSame(newTime))
+
+
+
+      });
+
+
+      var HoursArrayTwelve = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+
+      for (var i = 0; i < HoursArrayTwelve.length; i++) {
+
+        var dataHour = localStorage.getItem(HoursArrayTwelve[i]);
+      }
+
+      $('.saveBtn').on('click', function () {
+        event.preventDefault();
+
+        var userInput = $(this).siblings(".form-control").val();
+        // console.log($(".form-control").val())
+        // console.log("This Worked")
+        var listHour = $(this).parent().data("hour");
+
+        localStorage.setItem(listHour, userInput);
+
+      });
+
+
+    </script>
+
+</body>
+
 </html>
