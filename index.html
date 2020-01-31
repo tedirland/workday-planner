@@ -31,7 +31,7 @@
       // Time and Date Vars using Moment
 
       var now = moment()
-      console.log (now)
+    
       var formattedDay = moment().format("dddd, MMMM D")// Variable to display date at top
       $('#currentDay').html(formattedDay); // Assigns to top
 
@@ -57,7 +57,7 @@
 
         var inputText = $("<input>").attr('type', "text");
         inputText.addClass("form textarea col-md-8");
-        inputText.data( newTime);
+        inputText.attr("data-hour", newTime)
 
         var inputSubmit = $('<button>').attr('type', "submit")
         inputSubmit.addClass("saveBtn col-1")
@@ -66,7 +66,7 @@
         icon.addClass("far fa-save")
 
 
-  console.log("Your current time is after the schedule time")
+  // console.log("Your current time is after the schedule time")
 
 
         // Dynamically Generate Elements
@@ -98,19 +98,6 @@ if (currentTime > newTime[0]) {
   }// I can't figure out why this is not working for the life of me. The times that should be past are being assigned all 3 classes in the if/else statements. The current time is being assigned both present and future
 
 
-        console.log(currentTime);
-
-      
-console.locurrentTime === newTime[0]
-        console.log(newTime[0])
-
-
-        // console.log(currentTime.isAfter(newTime))
-
-        // console.log(currentTime.isBefore(newTime))
-
-        // console.log(currentTime.isSame(newTime))
-
 
 
       });
@@ -126,12 +113,15 @@ console.locurrentTime === newTime[0]
       $('.saveBtn').on('click', function () {
         event.preventDefault();
 
-        var userInput = $(this).siblings(".form-control").val();
-        // console.log($(".form-control").val())
-        // console.log("This Worked")
-        var listHour = $(this).parent().data(newTime);
+        // var userInput = $(this).siblings(".form-control").val();
+        // // console.log($(".form-control").val())
+        // // console.log("This Worked")
+        // var listHour = $(this).parent().data(newTime);
 
-        localStorage.setItem(listHour, userInput);
+        // localStorage.setItem(listHour, userInput);
+        // console.log(event)
+        // console.log(event.target)
+      
 
       });
 
