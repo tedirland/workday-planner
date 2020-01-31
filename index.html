@@ -30,72 +30,86 @@
     <script>
       // Time and Date Vars using Moment
 
-      var now = moment().format()
+      var now = moment()
+      console.log (now)
       var formattedDay = moment().format("dddd, MMMM D")// Variable to display date at top
       $('#currentDay').html(formattedDay); // Assigns to top
 
       // Setting Up time array
-      var currentTime = moment();
-      var currentTime = currentTime.startOf("hour")
+      var currentTime = moment().startOf('hour').format('HH:mm')
+      
 
       var hoursArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
       hoursArray.forEach(function (time) {
 
         var newTime = []
-        newTime.push(moment().hour(time).minutes("00").format('hh:mm A'));
+        newTime.push(moment().hour(time).minutes("00").format('HH:mm'));
         // console.log(newTime)
         // console.log(currentTime)
 
 
         var newDiv = $("<div>");
-        newDiv.addClass("row")
+        newDiv.addClass("row time-block")
 
         var addSpan = $('<span>')
-        addSpan.addClass("hour col-col-md-2")
+        addSpan.addClass("hour col-sm-2")
 
         var inputText = $("<input>").attr('type', "text");
-        inputText.addClass("time-block form-control col-md-8");
-        inputText.data("displayHour");
+        inputText.addClass("form textarea col-md-8");
+        inputText.data( newTime);
 
         var inputSubmit = $('<button>').attr('type', "submit")
-        inputSubmit.addClass("saveBtn col-col-md-2")
+        inputSubmit.addClass("saveBtn col-1")
 
         var icon = $('<i>');
         icon.addClass("far fa-save")
+
+
+  console.log("Your current time is after the schedule time")
 
 
         // Dynamically Generate Elements
         $(".container").append(newDiv)
         newDiv.append(addSpan);
         newDiv.append(inputText)
-        newDiv.append(inputSubmit)
+        .append(inputSubmit)
         inputSubmit.append(icon);
 
 
         addSpan.text(newTime);
 
-        if (currentTime.isAfter(newTime)) {
-          $(".form").addClass("past");
 
-        }
-        else if (currentTime.isBefore(newTime)) {
-          $(".form").addClass("future");
-        }
-        else if (currentTime.isSame(newTime)) {
-          $(".form").addClass("present");
+          var twentyFourHourCurrent = moment().format("HH:mm")
 
-        }
+
+if (currentTime > newTime[0]) {
+  $(".textarea").addClass('past');
+  } else if (currentTime < newTime[0]) {
+
+    $('.textarea').addClass('future')
+  }
+
+  else if (currentTime === newTime[0]) {
+
+    $('.textarea').addClass('present')
+
+
+  }// I can't figure out why this is not working for the life of me. The times that should be past are being assigned all 3 classes in the if/else statements. The current time is being assigned both present and future
+
 
         console.log(currentTime);
 
-        console.log(newTime)
+      
+console.locurrentTime === newTime[0]
+        console.log(newTime[0])
 
-        console.log(currentTime.isAfter(newTime))
 
-        console.log(currentTime.isBefore(newTime))
+        // console.log(currentTime.isAfter(newTime))
 
-        console.log(currentTime.isSame(newTime))
+        // console.log(currentTime.isBefore(newTime))
+
+        // console.log(currentTime.isSame(newTime))
 
 
 
@@ -115,7 +129,7 @@
         var userInput = $(this).siblings(".form-control").val();
         // console.log($(".form-control").val())
         // console.log("This Worked")
-        var listHour = $(this).parent().data("hour");
+        var listHour = $(this).parent().data(newTime);
 
         localStorage.setItem(listHour, userInput);
 
